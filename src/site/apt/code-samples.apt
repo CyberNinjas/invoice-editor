@@ -1,0 +1,94 @@
+Code Samples
+
+* General usage
+
++---------------------------------------------------------------------------------+
+// create a PdfInvoiceEditor on a source invoice
+PdfInvoiceEditor pdfInvoiceEditor = new PdfInvoiceEditor("/sample/invoice.pdf");
+
+// set the font and size
+pdfInvoiceEditor.setFontAndSize("/fonts/calibri.ttf", 9);
+
+// parse the PDF content
+pdfInvoiceEditor.parseContent();
+
+// retrieve the list of ItemIds in the invoice
+List<String> itemIdList = pdfInvoiceEditor.listItemIds();
+
+// write the cumulative cost amounts
+pdfInvoiceEditor.writeCumulativeCost(itemIdList.get(0), 194.99);
+pdfInvoiceEditor.writeCumulativeCost(itemIdList.get(1), 2.38);
+pdfInvoiceEditor.writeCumulativeCost(itemIdList.get(2), 3);
+
+// write the cumulative cost subtotal
+pdfInvoiceEditor.writeCumulativeCostSubtotal(200.38);
+
+// write the total funded amount
+pdfInvoiceEditor.writeTotalFundedAmount(435.00);
+
+// write the modified PDF to file
+pdfInvoiceEditor.writeTo(new FileOutputStream("/generated/invoice_modified.pdf"));
++---------------------------------------------------------------------------------+
+
+* Override settings
+
++---------------------------------------------------------------------------------+
+// create a PdfInvoiceEditor on a source invoice
+PdfInvoiceEditor pdfInvoiceEditor = new PdfInvoiceEditor("/sample/invoice.pdf");
+
+// set the font and size
+pdfInvoiceEditor.setFontAndSize("/fonts/calibri.ttf", 9);
+
+// parse the PDF content
+pdfInvoiceEditor.parseContent();
+
+// retrieve the list of ItemIds in the invoice
+List<String> itemIdList = pdfInvoiceEditor.listItemIds();
+
+// write the cumulative cost amounts
+pdfInvoiceEditor.writeCumulativeCost(itemIdList.get(0), 194.99);
+pdfInvoiceEditor.writeCumulativeCost(itemIdList.get(1), 2.38);
+pdfInvoiceEditor.writeCumulativeCost(itemIdList.get(2), 3);
+
+// write the cumulative cost subtotal
+pdfInvoiceEditor.writeCumulativeCostSubtotal(200.38);
+
+// write the total funded amount
+pdfInvoiceEditor.writeTotalFundedAmount(435.00);
+
+// write the modified PDF to file
+pdfInvoiceEditor.writeTo(new FileOutputStream("/generated/invoice_modified.pdf"));
++---------------------------------------------------------------------------------+
+
+* Write text at specific coordinates
+
++---------------------------------------------------------------------------------+
+// create a PdfInvoiceEditor on a source invoice
+PdfInvoiceEditor pdfInvoiceEditor = new PdfInvoiceEditor("/sample/invoice.pdf");
+
+// set the font and size
+pdfInvoiceEditor.setFontAndSize("/fonts/calibri.ttf", 9);
+
+// write text to given x/y coordinates on the first page
+pdfInvoiceEditor.writeText(1, "Hello World!", Alignment.LEFT, 150, 250);
+
+// write the modified PDF to file
+pdfInvoiceEditor.writeTo(new FileOutputStream("/generated/invoice_modified.pdf"));
++---------------------------------------------------------------------------------+
+
+* Write text offset from matching text
+
++---------------------------------------------------------------------------------+
+// create a PdfInvoiceEditor on a source invoice
+PdfInvoiceEditor pdfInvoiceEditor = new PdfInvoiceEditor("/sample/invoice.pdf");
+
+// set the font and size
+pdfInvoiceEditor.setFontAndSize("/fonts/calibri.ttf", 9);
+
+// write text at offset from text 'INVOICE' 
+pdfInvoiceEditor.writeTextAtOffset("Hello World!", "INVOICE", 10, Alignment.LEFT);
+
+// write the modified PDF to file
+pdfInvoiceEditor.writeTo(new FileOutputStream("/generated/invoice_modified.pdf"));
++---------------------------------------------------------------------------------+
+

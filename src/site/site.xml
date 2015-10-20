@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Invoice Editor">
+    <body>
+        <menu name="Overview">
+            <item name="About" href="index.html"/>
+            <item name="Code Samples" href="code-samples.html"/>
+        </menu>
+
+        <menu ref="reports" />
+        
+    </body>
+</project>

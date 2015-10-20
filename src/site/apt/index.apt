@@ -1,0 +1,12 @@
+Overview
+
+    Invoice Editor is a package for writing data to an existing PDF invoice. iText is used to both parse
+the invoice to determine the location to write pre-defined content and to write the content.
+
+    This package has support for the following values:
+
+    * Cumulative Cost Amount by Item Id
+    
+    * Cumulative Cost Subtotal
+     
+    * Total Funded Amount
